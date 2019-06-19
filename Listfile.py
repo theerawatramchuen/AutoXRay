@@ -38,7 +38,8 @@ import time
 from keras.preprocessing import image as image_utils
 import matplotlib as plt
 
-strpath = "dataset/test_set/goods/"
+strpath = "UMY Samples/"
+#strpath = "dataset/test_set/goods/"
 #"C:\Users\Administrator\Desktop\PyTest\Allimg"    /home/thee/Documents/AutoXRay-master/
 
 print("path image : "+strpath)
@@ -74,7 +75,8 @@ for f in list_imgfile:
           img = cv.putText(img,prediction,(10,20),cv.FONT_HERSHEY_SIMPLEX,0.5,(0,0,0),1)
           cv.imshow('imageRun',img)
           end = time.time()
-          print("Process : ",str(i)," ",prediction," ",round(1000*(end-start),1),"mS")
+          print("Process : ",str(i)," ",prediction," ",round(1000*(end-start),1),"mS ",f)
+          cv.imwrite(f,img)
           
           cv.waitKey(1)
           del(img)
